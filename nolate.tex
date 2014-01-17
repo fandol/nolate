@@ -2,7 +2,7 @@
 % !TEX TS-program = xelatex
 % !TEX encoding = UTF-8 Unicode
 % -*- coding: utf-8 -*-
-% vim: set nobackup noundofile foldlevel=99 cc=78 :
+% vim: set nobk noudf fdl=99 tw=76 fo+=Mm cc+=+2 :
 %
 % nolate: Not only LaTeX as TeX essentials, the handbook
 % nolate.tex: the main control file of the handbook.
@@ -32,13 +32,39 @@
 %
 % 如果使用本 tex 文件作为模板，还可参考版本库中的更正历史，
 % 里面详细的记录了一本“书”从无到有的具体过程，尤其是 tex 文件的结构变化。
-
+%
 % 本文档的生成环境是 MikTeX 2.9，通过 XeTeX 引擎、ctex 宏包支持中文。
 %
 
 \documentclass[a4paper, UTF8]{ctexbook}
 
+% use \includeonly to only parse part of the included files.
+\includeonly{}
+
 \begin{document}
-最小中文文档。
+% For a book, there need some well known structures, e.g.:
+% coverpage, preface, contents, body, appendix, index, reference et.al..
+% \frontmatter at first.
+\frontmatter
+\input{coverpage}       % the book cover
+\input{frontpages}      % half cover, dedication et.al..
+
+\frontmatter            % reset the page number
+\input{preface}         % prologue and preface
+
+\tableofcontents        % table of contents, list of figures et.al..
+
+% All the above are called the `front matter` part.
+% and the body part should go after \mainmatter, we use \include for them.
+\mainmatter
+中文书籍结构示例。
+\include{chapters}
+
+% Appendix et. al. goes after \appendix
+\appendix
+
+% \backmatter starts the index et. al..
+\backmatter
+
 \end{document}
 
