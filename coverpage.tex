@@ -15,4 +15,39 @@
 %   A copy of the license is included in the package with the name LICENSE
 %
 
+\begin{titlepage}
+    % use titlepage for the cover, adjust everything by hand.
+    % \pdfbookmark[-1]{\thetitle}{titlepage}
+    \ThisULCornerWallPaper{1.0}{nolate.jpg}     % background image
+    % Image is created via GIMP (and word 2013), (C) the Fandol team.
+    \vspace*{2.7cm}
+    \hspace*{-1.4cm}
+    \begin{tikzpicture}             % ugly work around for selecting. ^_^
+        \node[fill opacity=0.0] at (0,0) {%
+         % {\fontsize{140bp}{\baselineskip}\selectfont\sffamily noLATE}%
+         {\fontsize{160bp}{\baselineskip}\selectfont\sffamily no}%
+         \fontsize{140bp}{\baselineskip}\selectfont L%
+         \hspace{-1.2cm}\fontsize{120bp}{\baselineskip}\selectfont A%
+         \hspace{-.8cm}\fontsize{140bp}{\baselineskip}\selectfont TE%
+        };              % I'm not using the same font in the image.
+    \end{tikzpicture}
+
+    \vspace{2.5cm}
+    \hspace*{-2cm}\resizebox{17cm}{\height}{\Huge \ttfamily \thename}
+    \begin{center}
+        \vspace{3cm}
+        {
+            \fontsize{96bp}{\baselineskip}\selectfont
+            {\bfseries \LaTeX} \\[1.5cm]
+            \sffamily 拾阶入室
+        }
+
+        \vspace{2cm}
+
+        {\huge \sffamily \thepublisher{}\quad 荣誉出品}
+    \end{center}
+\end{titlepage}
+
+% empty the next page.
+\clearpage{\thispagestyle{empty}\cleardoublepage}
 
